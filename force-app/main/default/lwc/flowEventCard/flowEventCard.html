@@ -1,0 +1,16 @@
+<template>
+    <div class="event-card">
+        <h3 class="event-card__name">{name}</h3>
+        <div lwc:if={hasDatetime}>
+            <div lwc:if={isSameDay} class="event-card__datetime">
+                <p class="event-card__date">{formattedDate}</p>
+                <p class="event-card__time">{formattedTime}</p>
+            </div>
+            <div lwc:else class="event-card__datetime">
+                <p class="event-card__date">{formattedStartFull}</p>
+                <p class="event-card__date event-card__date--end">{formattedEndFull}</p>
+            </div>
+        </div>
+        <p lwc:if={scheduleSummary} class="event-card__summary">{scheduleSummary}</p>
+    </div>
+</template>

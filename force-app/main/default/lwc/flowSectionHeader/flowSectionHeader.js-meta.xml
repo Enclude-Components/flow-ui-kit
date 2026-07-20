@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Section Header</masterLabel>
+    <description>Displays a styled sub-section heading for use on Flow screens.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="heading"
+                type="String"
+                label="Heading"
+                description="The section heading text to display."
+                role="inputOnly"
+            />
+            <property
+                name="marginTop"
+                type="String"
+                label="Margin Top"
+                description="Optional space above the header as a CSS length (e.g. 0.5rem, 1rem, 16px). Leave blank for no top margin."
+                role="inputOnly"
+            />
+            <property
+                name="marginBottom"
+                type="String"
+                label="Margin Bottom"
+                description="Optional space below the header as a CSS length (e.g. 0.5rem, 1rem, 16px). Leave blank to use the default bottom margin."
+                role="inputOnly"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

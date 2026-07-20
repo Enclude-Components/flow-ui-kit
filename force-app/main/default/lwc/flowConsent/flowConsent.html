@@ -1,0 +1,17 @@
+<template>
+    <div class={formElementClass}>
+        <div class="consent-row">
+            <input
+                type="checkbox"
+                id="consent-checkbox"
+                checked={isChecked}
+                onclick={handleChange}
+            />
+            <label for="consent-checkbox" class="consent-text">
+                <abbr class="required" title="required">*</abbr>
+                <lightning-formatted-rich-text value={label}></lightning-formatted-rich-text>
+            </label>
+        </div>
+        <p lwc:if={hasError} class="slds-form-error">This field is required.</p>
+    </div>
+</template>

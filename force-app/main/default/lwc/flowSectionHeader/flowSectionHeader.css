@@ -1,0 +1,4 @@
+.section-header-root {
+    border-bottom: 1px solid var(--slds-g-color-border-base-2, #c9c7c5);
+    margin-bottom: 0.75rem;
+}

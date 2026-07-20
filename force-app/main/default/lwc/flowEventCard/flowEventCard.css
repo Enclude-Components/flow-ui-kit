@@ -1,0 +1,41 @@
+.event-card {
+    background: var(--dxp-g-root-1);
+    border: 1px solid var(--slds-g-color-border-base-1);
+    border-left: 4px solid var(--dxp-g-brand);
+    border-radius: 0.25rem;
+    padding: 1rem 1.25rem;
+}
+
+.event-card__name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--slds-g-color-neutral-base-10);
+    margin: 0 0 0.5rem;
+}
+
+.event-card__datetime {
+    margin: 0;
+}
+
+.event-card__date {
+    font-size: 0.875rem;
+    color: var(--slds-g-color-neutral-base-30);
+    margin: 0 0 0.125rem;
+}
+
+.event-card__date--end::before {
+    content: '– ';
+}
+
+.event-card__time {
+    font-size: 0.875rem;
+    color: var(--slds-g-color-neutral-base-50);
+    margin: 0;
+}
+
+.event-card__summary {
+    font-size: 0.875rem;
+    color: var(--slds-g-color-neutral-base-30);
+    margin: 0.5rem 0 0;
+    white-space: pre-wrap;
+}

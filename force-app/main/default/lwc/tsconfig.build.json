@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "../../../../.sfdx/typings/lwc/engine.d.ts",
+    "**/__tests__/**"
+  ]
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Modal</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                default="Open"
+                description="Label displayed on the trigger button."
+            />
+            <property
+                name="modalLabel"
+                type="String"
+                label="Modal Title"
+                default="Flow"
+                description="Title displayed in the modal header."
+            />
+            <property
+                name="size"
+                type="String"
+                label="Size"
+                default="standard"
+                datasource="small,standard,large"
+                description="Size of the button."
+            />
+            <property
+                name="width"
+                type="String"
+                label="Width"
+                default="default"
+                datasource="default,full"
+                description="Whether the button stretches to full width."
+            />
+            <property
+                name="alignment"
+                type="String"
+                label="Horizontal Alignment"
+                default="left"
+                datasource="left,center,right"
+                description="Horizontal alignment of the button within its container."
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

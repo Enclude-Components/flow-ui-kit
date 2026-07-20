@@ -1,0 +1,60 @@
+/* Fixed tile size — prevents content from driving width */
+.slds-visual-picker {
+    width: 10rem;
+    min-height: 10rem;
+}
+
+.picker-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.picker-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem .5rem;
+    gap: 0.75rem;
+    height: auto;
+    width: 100%;
+}
+
+/* Clip badge to tile corners */
+.picker-label {
+    overflow: hidden;
+}
+
+/* Persistent blue border on selected tile */
+input[type="radio"]:checked + label {
+    box-shadow: 0 0 0 2px #0176d3;
+    border-radius: 0.25rem;
+}
+
+/* Override SLDS blue fill — keep white background on selected tile */
+input[type="radio"]:checked + label .slds-visual-picker__figure {
+    background-color: white;
+}
+
+/* Hide check badge by default */
+.slds-visual-picker__text-check {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    border-top-right-radius: 0.25rem;
+    /* Blue triangle in top-right corner */
+    background: linear-gradient(225deg, #0176d3 50%, transparent 50%);
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 0.2rem 0.2rem 0 0;
+}
+
+input[type="radio"]:checked + label .slds-visual-picker__text-check {
+    display: flex;
+}

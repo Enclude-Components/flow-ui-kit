@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Collection Picker</masterLabel>
+    <description>Displays a collection of SObject records as a visual picker and returns the selected record to the flow.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-flow-collection-picker-editor">
+            <propertyType
+                name="T"
+                extends="SObject"
+                label="Record Type"
+                description="The SObject type of the records collection"
+            />
+            <property
+                name="records"
+                type="{T[]}"
+                label="Records"
+                description="Collection of SObject records to display."
+                role="inputOnly"
+            />
+            <property
+                name="labelFieldName"
+                type="String"
+                label="Label Field Name"
+                description="API name of the field to use as each item's label (e.g. Name)."
+                role="inputOnly"
+            />
+            <property
+                name="descriptionFieldName"
+                type="String"
+                label="Description Field Name"
+                description="API name of the field to use as each item's description. Optional."
+                role="inputOnly"
+            />
+            <property
+                name="iconName"
+                type="String"
+                label="Icon Name"
+                description="SLDS icon name to display on each item (e.g. standard:location). Optional."
+                role="inputOnly"
+            />
+            <property
+                name="required"
+                type="Boolean"
+                label="Required"
+                description="If true, the user must select a record before proceeding."
+                role="inputOnly"
+            />
+            <property
+                name="selectedRecord"
+                type="{T}"
+                label="Selected Record"
+                description="The SObject record the user selected."
+                role="outputOnly"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

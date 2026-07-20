@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Event Card</masterLabel>
+    <description>Displays event or session details (name, start, end) as a card on a Flow screen. Collapses the date when start and end fall on the same day.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="name"            type="String" label="Name"              role="inputOnly" />
+            <property name="startDatetime"   type="String" label="Start DateTime"    role="inputOnly" />
+            <property name="endDatetime"     type="String" label="End DateTime"      role="inputOnly" />
+            <property name="scheduleSummary" type="String" label="Schedule Summary"  role="inputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,55 @@
+<template>
+    <lightning-input
+        label="Object API Name"
+        value={objectType}
+        placeholder="e.g. ServiceTerritory"
+        onchange={handleObjectTypeChange}>
+    </lightning-input>
+
+    <lightning-combobox
+        label="Records Collection"
+        value={recordsValue}
+        placeholder="Select a collection variable..."
+        options={collectionVariableOptions}
+        disabled={isObjectTypeEmpty}
+        onchange={handleRecordsChange}
+        class="slds-var-m-top_small">
+    </lightning-combobox>
+
+    <lightning-input
+        label="Label Field Name"
+        value={labelFieldNameValue}
+        placeholder="Name"
+        data-name="labelFieldName"
+        onchange={handleStringChange}
+        class="slds-var-m-top_small">
+    </lightning-input>
+
+    <lightning-input
+        label="Description Field Name (optional)"
+        value={descriptionFieldNameValue}
+        placeholder="e.g. Description"
+        data-name="descriptionFieldName"
+        onchange={handleStringChange}
+        class="slds-var-m-top_small">
+    </lightning-input>
+
+    <lightning-input
+        label="Icon Name (optional)"
+        value={iconNameValue}
+        placeholder="e.g. standard:location"
+        data-name="iconName"
+        onchange={handleStringChange}
+        class="slds-var-m-top_small">
+    </lightning-input>
+
+    <lightning-input
+        type="toggle"
+        label="Required"
+        checked={requiredValue}
+        onchange={handleRequiredChange}
+        message-toggle-active="Yes"
+        message-toggle-inactive="No"
+        class="slds-var-m-top_small">
+    </lightning-input>
+</template>

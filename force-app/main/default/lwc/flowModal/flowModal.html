@@ -1,0 +1,29 @@
+<template>
+    <template lwc:if={isOpen}>
+        <div class="slds-modal slds-fade-in-open" role="dialog" aria-modal="true" aria-label={modalLabel} onkeydown={handleKeyDown}>
+            <div class="slds-modal__container">
+                <lightning-button-icon
+                    icon-name="utility:close"
+                    class="slds-modal__close"
+                    alternative-text="Close"
+                    tabindex="0"
+                    onclick={handleClose}>
+                </lightning-button-icon>
+                <header class="slds-modal__header" lwc:if={modalLabel}>
+                    <h2 class="slds-modal__title">{modalLabel}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" onstatuschange={handleStatusChange}>
+                    <slot name="flow"></slot>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open" onclick={handleClose}></div>
+    </template>
+
+    <div lwc:else class={containerClass}>
+        <button class={buttonClass} onclick={handleOpen}>{buttonLabel}</button>
+        <div lwc:if={isInSitePreview} class="slot-preview">
+            <slot name="flow"></slot>
+        </div>
+    </div>
+</template>

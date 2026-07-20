@@ -1,0 +1,32 @@
+<template>
+    <fieldset class="slds-form-element">
+        <legend class="slds-form-element__legend slds-form-element__label">
+            <abbr lwc:if={required} class="slds-required" title="required">*</abbr>
+            Select a record
+        </legend>
+        <div class="slds-form-element__control">
+            <div class="slds-visual-picker__group picker-group">
+                <div key={opt.value} class="slds-visual-picker slds-visual-picker_medium" for:each={options} for:item="opt">
+                    <input
+                        type="radio"
+                        name={_groupName}
+                        id={opt.inputId}
+                        value={opt.value}
+                        onchange={handleChange}
+                        onclick={handleClick} />
+                    <label for={opt.inputId} class="picker-label">
+                        <span class="slds-visual-picker__figure picker-figure">
+                            <lightning-icon lwc:if={iconName} icon-name={iconName} size="large"></lightning-icon>
+                            <span class="slds-text-heading_small">{opt.label}</span>
+                            <span lwc:if={opt.description} class="slds-text-body_small slds-text-color_weak">{opt.description}</span>
+                        </span>
+                        <span class="slds-visual-picker__text-check">
+                            <lightning-icon icon-name="utility:check" size="x-small" variant="inverse"></lightning-icon>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <p lwc:if={errorMessage} class="slds-form-element__help">{errorMessage}</p>
+    </fieldset>
+</template>

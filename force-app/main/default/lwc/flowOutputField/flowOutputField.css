@@ -1,0 +1,13 @@
+.output-field {
+    margin-bottom: 0.75rem;
+}
+
+.label {
+    color: var(--slds-g-color-neutral-base-50, #706e6b);
+    font-size: 0.75rem;
+    margin-bottom: 0.125rem;
+}
+
+.value {
+    color: var(--slds-g-color-neutral-base-10, #181818);
+}

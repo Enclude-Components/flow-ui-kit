@@ -1,0 +1,5 @@
+.header-root {
+    border-bottom: 1px solid var(--slds-g-color-border-base-2, #c9c7c5);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,37 @@
+{
+  "extends": "../../../../.sfdx/tsconfig.sfdx.json",
+  "include": [
+    "**/*.ts",
+    "../../../../.sfdx/typings/lwc**/*.d.ts"
+  ],
+  "exclude": [
+    "../../../../.sfdx/typings/lwc/engine.d.ts"
+  ],
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["ESNext", "DOM", "Decorators"],
+    "types": ["@salesforce/lightning-types", "jest"],
+    "strict": true,
+    "experimentalDecorators": false,
+    "noEmitOnError": true,
+    "paths": {
+      "c/siteUtils": ["./siteUtils/siteUtils"],
+      "c/flowCpeMixin": ["./flowCpeMixin/flowCpeMixin"],
+      "c/flowActionButton": ["./flowActionButton/flowActionButton"],
+      "c/flowCollectionPicker": ["./flowCollectionPicker/flowCollectionPicker"],
+      "c/flowCollectionPickerEditor": ["./flowCollectionPickerEditor/flowCollectionPickerEditor"],
+      "c/flowConsent": ["./flowConsent/flowConsent"],
+      "c/flowEventCard": ["./flowEventCard/flowEventCard"],
+      "c/flowField": ["./flowField/flowField"],
+      "c/flowHeader": ["./flowHeader/flowHeader"],
+      "c/flowModal": ["./flowModal/flowModal"],
+      "c/flowOutputField": ["./flowOutputField/flowOutputField"],
+      "c/flowRecordRedirect": ["./flowRecordRedirect/flowRecordRedirect"],
+      "c/flowSectionHeader": ["./flowSectionHeader/flowSectionHeader"]
+    },
+    "skipLibCheck": true,
+    "removeComments": false
+  }
+}

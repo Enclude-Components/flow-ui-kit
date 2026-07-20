@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>66.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Action Button</masterLabel>
+    <description>A button for Flow screens. Sets its Selected output to true and advances the flow when clicked. Drag one per action and branch on the Selected output in a Decision element.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property
+                name="buttonLabel"
+                type="String"
+                label="Button Label"
+                description="The label displayed on the button."
+                role="inputOnly"
+            />
+            <property
+                name="buttonIcon"
+                type="String"
+                label="Button Icon"
+                description="SLDS icon name, e.g. utility:edit or action:delete."
+                role="inputOnly"
+            />
+            <property
+                name="selected"
+                type="Boolean"
+                label="Selected"
+                description="Set to true when the button is clicked. Map to a flow variable and branch on it in a Decision element."
+                role="outputOnly"
+            />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

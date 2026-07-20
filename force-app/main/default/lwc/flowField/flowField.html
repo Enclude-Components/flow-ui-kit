@@ -1,0 +1,17 @@
+<template>
+    <div>
+        <p class="slds-text-title_bold slds-m-bottom_xx-small">{label}</p>
+        <div class="slds-box slds-box_x-small slds-theme_shade slds-m-bottom_small">
+            <span lwc:if={isEmpty}>—</span>
+            <lightning-formatted-date-time lwc:elseif={isDateTime} value={value} year="numeric" month="long" day="numeric" hour="2-digit" minute="2-digit"></lightning-formatted-date-time>
+            <lightning-formatted-date-time lwc:elseif={isDate} value={value} year="numeric" month="long" day="numeric"></lightning-formatted-date-time>
+            <lightning-formatted-number lwc:elseif={isNumber} value={value}></lightning-formatted-number>
+            <lightning-formatted-number lwc:elseif={isCurrency} value={value} format-style="currency" currency-code="GBP"></lightning-formatted-number>
+            <lightning-formatted-number lwc:elseif={isPercent} value={value} format-style="percent"></lightning-formatted-number>
+            <lightning-formatted-phone lwc:elseif={isPhone} value={value}></lightning-formatted-phone>
+            <lightning-formatted-email lwc:elseif={isEmail} value={value}></lightning-formatted-email>
+            <lightning-formatted-url lwc:elseif={isUrl} value={value}></lightning-formatted-url>
+            <span lwc:else>{value}</span>
+        </div>
+    </div>
+</template>
