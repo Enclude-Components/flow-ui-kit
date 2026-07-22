@@ -1,0 +1,46 @@
+<template>
+    <!-- Header with month navigation -->
+    <div class="calendar-header">
+        <lightning-button-icon
+            variant="border-filled"
+            icon-name="utility:chevronleft"
+            alternative-text="Previous month"
+            title="Previous month"
+            onclick={handlePreviousMonth}
+        ></lightning-button-icon>
+
+
+
+        <h2 class="slds-text-heading_medium">{monthYearTitle}</h2>
+
+        <lightning-button-icon
+            variant="border-filled"
+            icon-name="utility:chevronright"
+            alternative-text="Next month"
+            title="Next month"
+            onclick={handleNextMonth}
+        ></lightning-button-icon>
+
+    </div>
+
+    <!-- Days of week headers -->
+    <div class="calendar-grid">
+        <div
+            for:each={daysOfWeek}
+            for:item="day"
+            key={day}
+            class="slds-text-heading_small day-header"
+        >
+            {day}
+        </div>
+
+        <!-- Calendar dates -->
+        <c-flow-calendar-day
+            for:each={calendarDays}
+            for:item="day"
+            key={day.key}
+            day={day}
+            input-records={inputRecords}
+        ></c-flow-calendar-day>
+    </div>
+</template>

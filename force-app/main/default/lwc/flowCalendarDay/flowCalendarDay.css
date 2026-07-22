@@ -1,0 +1,97 @@
+.calendar-day {
+    height: 35px;
+    width: 35px;
+    min-width: 35px; /* Ensures consistent width */
+}
+
+.calendar-day--deactivated {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+
+.calendar-day--activated {
+    background: #1d4ed8;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day--activated:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+}
+
+.calendar-day:hover:not(:disabled):not(.calendar-day--other-month) {
+    background: #f3f4f6;
+    transform: scale(1.05);
+}
+
+.calendar-day:active:not(:disabled):not(.calendar-day--other-month) {
+    transform: scale(0.95);
+}
+
+.calendar-day--today {
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day--today:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+.calendar-day--selected {
+    background: #1d4ed8;
+    color: white;
+    font-weight: 600;
+}
+
+.calendar-day--selected:hover {
+    background: #1e40af;
+    transform: scale(1.05);
+}
+
+.calendar-day--past {
+    color: #9ca3af;
+    cursor: not-allowed;
+}
+
+.calendar-day--past:hover {
+    background: transparent;
+    transform: none;
+}
+
+.calendar-day--other-month {
+    color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.calendar-day--other-month:hover {
+    background: transparent;
+    transform: none;
+}
+
+/* Highlighted days (for future use when you add records) */
+.calendar-day--highlighted {
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+.calendar-day--highlighted:hover {
+    background: #bfdbfe;
+    transform: scale(1.05);
+}
+
+.calendar-day--highlighted.calendar-day--selected {
+    background: #1d4ed8;
+    color: white;
+}
+
+/* Focus styles for accessibility */
+.calendar-day:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    z-index: 1;
+}

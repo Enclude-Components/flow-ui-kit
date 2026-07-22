@@ -14,6 +14,30 @@ A button for Flow screens. Sets its `Selected` output to `true` and advances the
 | `buttonIcon` | String | input | SLDS icon name, e.g. `utility:edit` or `action:delete`. |
 | `selected` | Boolean | output | Set to `true` when clicked. Map to a flow variable and branch on it. |
 
+### `flowCalendar`
+
+A month-view interactive calendar. Not Flow-specific — targets App, Record, and Home pages plus Experience Cloud sites. Renders each day as a `flowCalendarDay` and passes navigation and record lookup along.
+
+| Property/Method | Type | Description |
+|---|---|---|
+| `inputRecords` | `Record<string, unknown>[]` | Records to plot on the calendar. |
+| `dateTimeField` | String | API name of the date/datetime field used to place each record on a day. |
+| `getDateRecords(date)` | `Record<string, unknown>[]` | Returns the records falling on the given date. |
+
+### `flowCalendarRecordSelection`
+
+Lets a Flow screen user pick a day on a calendar, then select one of that day's records by time slot — e.g. choosing an appointment slot. Composed from `flowCalendar` (day grid) and `flowCalendarDaySelectedRecordButton` (per-record time slot buttons); has a matching custom property editor (`flowCalendarRecordSelectionEditor`) for configuring it in Flow Builder.
+
+| Property/Method | Type | Direction | Description |
+|---|---|---|---|
+| `inputRecords` | `T[]` | input | Collection of SObject records to choose from. |
+| `dateTimeField` | String | input | Date/time field used as each record's calendar start time. |
+| `required` | Boolean | input | If `true`, the user must select a record before proceeding. |
+| `selectedRecord` | `T` | output | The SObject record the user selected. |
+| `validate()` | `{ isValid, errorMessage }` | — | Called automatically by the flow runtime when `required` is set. |
+
+Dispatches a standard `FlowAttributeChangeEvent` for `selectedRecord` and a `FlowNavigationNextEvent` once a record is picked.
+
 ### `flowCollectionPicker`
 
 Displays a collection of SObject records as a visual picker (radio-button style) and returns the selected record to the flow. Has a matching custom property editor (`flowCollectionPickerEditor`) for configuring it in Flow Builder.

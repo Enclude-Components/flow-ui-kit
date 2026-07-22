@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Calendar Record Selection</masterLabel>
+    <description>Lets the user pick a day on a calendar, then select one of that day's records by time slot.</description>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="%%%NAMESPACED_ORG_OR_C%%%-flow-calendar-record-selection-editor">
+            <property name="required" type="Boolean" label="Required" description="If required, user may not navigate to the next screen without selecting a record" role="inputOnly" default="false"/>
+            <propertyType name="T" extends="SObject" label="Record Type" description="The SObject type for the records"/>
+            <property name="inputRecords" type="{T[]}" label="Input Records Collection" description="Collection of records to choose from" role="inputOnly"/>
+            <property name="dateTimeField" type="String" label="Date Time Field" description="Date Time field to use as calendar start date time" role="inputOnly"/>
+            <property name="selectedRecord" type="{T}" label="Selected Record" description="The selected record" role="outputOnly"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

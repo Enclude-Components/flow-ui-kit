@@ -1,0 +1,46 @@
+<template>
+    <lightning-input
+        class="slds-m-top_small"
+        type="toggle"
+        label="Required"
+        checked={requiredValue}
+        field-level-help="If toggled, user may not advance screen without selecting a record"
+        onchange={handleRequiredChange}
+    ></lightning-input>
+
+    <lightning-input
+        label="Object API Name"
+        name="objectType"
+        value={inputType}
+        placeholder="Enter SObject Type"
+        field-level-help="The developer name of the Salesforce Object to use as a data source"
+        onchange={handleInputTypeChange}
+        max-length="40"
+        required
+    >
+    </lightning-input>
+
+    <lightning-combobox
+        label="Record Collection Variable"
+        value={inputRecordsValue}
+        placeholder="Select Collection Variable"
+        field-level-help="The record collection variable to use as the data source"
+        options={valueOptions}
+        onchange={handleRecordCollectionSelection}
+        disabled={isDisabled}
+        required
+    >
+    </lightning-combobox>
+
+    <lightning-combobox
+        label="Date Time Field"
+        value={dateTimeFieldValue}
+        placeholder="Select Date Time Field"
+        field-level-help="The date time field to use as the start date time of the record"
+        options={dateTimeFieldOptions}
+        onchange={handleDateTimeSelection}
+        disabled={isDisabled}
+        required
+    >
+    </lightning-combobox>
+</template>

@@ -28,3 +28,27 @@ declare module 'lightning/flowSupport' {
         constructor(attributeName: string, attributeValue: unknown);
     }
 }
+
+declare module 'lightning/uiObjectInfoApi' {
+    import type { WireAdapterConstructor } from 'lwc';
+
+    export interface FieldInfo {
+        apiName: string;
+        dataType: string;
+        label: string;
+        [key: string]: unknown;
+    }
+
+    export interface ObjectInfo {
+        apiName: string;
+        fields: Record<string, FieldInfo>;
+        [key: string]: unknown;
+    }
+
+    export interface ObjectInfoWireResult {
+        data?: ObjectInfo;
+        error?: unknown;
+    }
+
+    export const getObjectInfo: WireAdapterConstructor<{ objectApiName: string }, ObjectInfoWireResult>;
+}
