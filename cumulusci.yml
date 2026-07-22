@@ -3,6 +3,7 @@ project:
     name: flow-ui-kit
     package:
         name: flow-ui-kit
+        namespace: enc_flowui
         api_version: '67.0'
     git:
         default_branch: 'main'
