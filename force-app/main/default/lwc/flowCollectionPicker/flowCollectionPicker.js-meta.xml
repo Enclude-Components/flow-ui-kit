@@ -8,7 +8,7 @@
         <target>lightning__FlowScreen</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__FlowScreen" configurationEditor="c-flow-collection-picker-editor">
+        <targetConfig targets="lightning__FlowScreen" configurationEditor="%%%NAMESPACED_ORG_OR_C%%%-flow-collection-picker-editor">
             <propertyType
                 name="T"
                 extends="SObject"
